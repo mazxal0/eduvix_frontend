@@ -1,0 +1,92 @@
+.root {
+  border-radius: var(--radius) !important;
+  background: var(--input-background) !important;
+  border-color: var(--border) !important;
+  color: var(--foreground) !important;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+/* placeholder */
+.root :global(input::placeholder),
+.root:global(.ant-input)::placeholder {
+  color: var(--muted-foreground) !important;
+}
+
+/* sizes */
+.s_sm {
+  height: 34px !important;
+}
+.s_md {
+  height: 40px !important;
+}
+.s_lg {
+  height: 48px !important;
+}
+
+/* variants */
+.v_outline {
+  background: var(--input-background) !important;
+  border-color: var(--border) !important;
+}
+
+.v_filled {
+  background: var(--muted) !important;
+  border-color: transparent !important;
+}
+
+.v_ghost {
+  background: transparent !important;
+  border-color: transparent !important;
+}
+
+/* hover */
+.v_outline:hover,
+.v_filled:hover {
+  border-color: var(--primary) !important;
+}
+
+.v_ghost:hover {
+  background: color-mix(in oklab, var(--foreground) 6%, transparent) !important;
+}
+
+/* focus */
+.root:focus,
+.root:focus-within {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 4px color-mix(in oklab, var(--ring) 35%, transparent) !important;
+}
+
+/* tones (success/info поверх antd status) */
+.t_success {
+  border-color: color-mix(in oklab, var(--success) 65%, var(--border)) !important;
+}
+
+.t_info {
+  border-color: color-mix(in oklab, var(--info) 65%, var(--border)) !important;
+}
+
+.t_warning {
+  border-color: color-mix(in oklab, var(--warning) 65%, var(--border)) !important;
+}
+
+.t_error {
+  border-color: color-mix(in oklab, var(--destructive) 70%, var(--border)) !important;
+}
+
+/* textarea */
+.textarea {
+  min-height: 96px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* чтобы size-классы не ломали textarea высоту */
+.textarea.s_sm,
+.textarea.s_md,
+.textarea.s_lg {
+  height: auto !important;
+}

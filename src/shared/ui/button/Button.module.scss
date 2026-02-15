@@ -2,8 +2,11 @@
   border-radius: var(--radius);
   font-weight: var(--font-weight-medium);
   box-shadow: none;
-  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease,
-  opacity 0.15s ease;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease,
+    opacity 0.15s ease;
 }
 
 /* sizes */
@@ -114,5 +117,4 @@
 }
 
 .iconRight {
-
 }

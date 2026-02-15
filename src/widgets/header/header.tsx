@@ -1,12 +1,16 @@
 'use client';
 
-import Link from 'next/link';
-import { Layout, Menu, Drawer, Space, Typography, Grid } from 'antd';
-import type { MenuProps } from 'antd';
-import { MenuOutlined } from '@ant-design/icons';
 import { useMemo, useState } from 'react';
-import styles from "./header.module.scss"
+
+import Link from 'next/link';
+
+import { MenuOutlined } from '@ant-design/icons';
+import { Drawer, Grid, Layout, Menu, Space, Typography } from 'antd';
+import type { MenuProps } from 'antd';
+
 import { Button } from '@/shared/ui';
+
+import styles from './header.module.scss';
 
 const { Header } = Layout;
 const { Text } = Typography;
@@ -20,13 +24,34 @@ export function AppHeader() {
 
   const navItems: MenuProps['items'] = useMemo(
     () => [
-      { key: 'features', label: <Link href="/#features" className={styles.link_header}>Возможности</Link> },
+      {
+        key: 'features',
+        label: (
+          <Link href="/#features" className={styles.link_header}>
+            Возможности
+          </Link>
+        ),
+      },
       // { key: 'tutors', label: <Link href="/#tutors" className={styles.link_header}>Найти репетитора</Link> },
-      { key: 'how', label: <Link href="/#how-it-works" className={styles.link_header}>Как это работает</Link> },
-      { key: 'pricing', label: <Link href="/#pricing" className={styles.link_header}>Подписки</Link> },
+      {
+        key: 'how',
+        label: (
+          <Link href="/#how-it-works" className={styles.link_header}>
+            Как это работает
+          </Link>
+        ),
+      },
+      {
+        key: 'pricing',
+        label: (
+          <Link href="/#pricing" className={styles.link_header}>
+            Подписки
+          </Link>
+        ),
+      },
       // { key: 'reviews', label: <Link href="/#reviews" className={styles.link_header}>Отзывы</Link> },
     ],
-    []
+    [],
   );
 
   return (
@@ -56,7 +81,12 @@ export function AppHeader() {
         {/* Left: Logo */}
         <Link
           href="/"
-          style={{ display: 'flex', alignItems: 'center', gap: 10, minWidth: 140 }}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: 10,
+            minWidth: 140,
+          }}
         >
           {/* Мини-иконка (не книга) — просто квадрат как бренд-бейдж */}
           <div
@@ -67,7 +97,13 @@ export function AppHeader() {
               background: 'var(--primary)',
             }}
           />
-          <Text style={{ color: 'var(--foreground)', fontSize: 18, fontWeight: 600 }}>
+          <Text
+            style={{
+              color: 'var(--foreground)',
+              fontSize: 18,
+              fontWeight: 600,
+            }}
+          >
             EduVix
           </Text>
         </Link>

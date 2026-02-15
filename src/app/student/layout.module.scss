@@ -1,0 +1,15 @@
+.shell {
+  min-height: 100vh;
+}
+
+.content {
+  margin-left: 260px;
+  min-width: 0;
+}
+
+/* mobile */
+@media (max-width: 767px) {
+  .content {
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,35 @@
+.card {
+  border-radius: 12px;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 12px;
+}
+
+.value {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: rgba(22, 119, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

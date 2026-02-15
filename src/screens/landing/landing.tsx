@@ -1,40 +1,59 @@
 'use client';
 
-import Link from "next/link";
+import Link from 'next/link';
+
 import {
-  Layout,
-  Typography,
-  Space,
-  Card,
-  Row,
-  Col,
-  Tag,
-} from "antd";
-import {
-  BookOutlined,
-  VideoCameraOutlined,
-  CheckSquareOutlined,
-  BarChartOutlined,
-  CalendarOutlined,
-  SafetyCertificateOutlined,
-  MessageOutlined,
   ArrowRightOutlined,
+  BarChartOutlined,
+  BookOutlined,
+  CalendarOutlined,
+  CheckSquareOutlined,
+  MessageOutlined,
+  SafetyCertificateOutlined,
   StarFilled,
-} from "@ant-design/icons";
-import styles from "./landing.module.scss";
-import {Button} from "@/shared/ui";
-import clsx from "clsx";
+  VideoCameraOutlined,
+} from '@ant-design/icons';
+import { Card, Col, Layout, Row, Space, Tag, Typography } from 'antd';
+import clsx from 'clsx';
+
+import { Button } from '@/shared/ui';
+
+import styles from './landing.module.scss';
 
 const { Content } = Layout;
 const { Title, Paragraph, Text } = Typography;
 
 const features = [
-  { icon: <VideoCameraOutlined />, title: "Видео-уроки", desc: "Звонки, чат и демонстрация экрана (MVP — позже расширим)." },
-  { icon: <CheckSquareOutlined />, title: "Домашка", desc: "Назначить → сдать → проверить. Файлы и комментарии." },
-  { icon: <BarChartOutlined />, title: "Аналитика", desc: "Уроки, домашки, последняя активность — без лишнего." },
-  { icon: <CalendarOutlined />, title: "Запись по слотам", desc: "Репетитор задаёт availability, студент бронирует 60 минут." },
-  { icon: <MessageOutlined />, title: "Сообщения", desc: "1:1 чат репетитор ↔ ученик + файлы. Один чат на все уроки" },
-  { icon: <SafetyCertificateOutlined />, title: "Антиспам-лимиты", desc: "≤3 активных бронирования, ≤6 уроков/неделя (настраивается)." },
+  {
+    icon: <VideoCameraOutlined />,
+    title: 'Видео-уроки',
+    desc: 'Звонки, чат и демонстрация экрана (MVP — позже расширим).',
+  },
+  {
+    icon: <CheckSquareOutlined />,
+    title: 'Домашка',
+    desc: 'Назначить → сдать → проверить. Файлы и комментарии.',
+  },
+  {
+    icon: <BarChartOutlined />,
+    title: 'Аналитика',
+    desc: 'Уроки, домашки, последняя активность — без лишнего.',
+  },
+  {
+    icon: <CalendarOutlined />,
+    title: 'Запись по слотам',
+    desc: 'Репетитор задаёт availability, студент бронирует 60 минут.',
+  },
+  {
+    icon: <MessageOutlined />,
+    title: 'Сообщения',
+    desc: '1:1 чат репетитор ↔ ученик + файлы. Один чат на все уроки',
+  },
+  {
+    icon: <SafetyCertificateOutlined />,
+    title: 'Антиспам-лимиты',
+    desc: '≤3 активных бронирования, ≤6 уроков/неделя (настраивается).',
+  },
 ];
 
 export function Landing() {
@@ -48,25 +67,24 @@ export function Landing() {
 
             <Title className={styles.heroTitle}>
               Всё для занятий в одном месте:
-              <p className={styles.primary}>
-                Для одиночных репетиторов
-              </p>
+              <p className={styles.primary}>Для одиночных репетиторов</p>
             </Title>
 
-
             <Paragraph className={styles.heroText}>
-              Видеоуроки, управление домашними заданиями, аналитика по ученикам и
-              проверенный маркетплейс — всё в одной профессиональной и надёжной платформе.
+              Видеоуроки, управление домашними заданиями, аналитика по ученикам и проверенный
+              маркетплейс — всё в одной профессиональной и надёжной платформе.
             </Paragraph>
 
             <Space size="middle" className={styles.heroActions} wrap>
               <Link href="/signup">
-                <Button intent="primary" uiSize="md" iconRight={<ArrowRightOutlined/>}>
+                <Button intent="primary" uiSize="md" iconRight={<ArrowRightOutlined />}>
                   Стать репетитором
                 </Button>
               </Link>
               <Link href="#features">
-                <Button intent={'outline'} uiSize="md">Найти репетитора</Button>
+                <Button intent={'outline'} uiSize="md">
+                  Найти репетитора
+                </Button>
               </Link>
             </Space>
 
@@ -91,7 +109,9 @@ export function Landing() {
         <section id="features" className={styles.section}>
           <div className={styles.container}>
             <div className={styles.sectionHead}>
-              <Title level={2} className={styles.sectionTitle}>Всё, что нужно для эффективной работы</Title>
+              <Title level={2} className={styles.sectionTitle}>
+                Всё, что нужно для эффективной работы
+              </Title>
               <Paragraph className={styles.sectionDesc}>
                 Единая платформа для современного репетиторства со всеми необходимыми инструментами.
               </Paragraph>
@@ -102,7 +122,9 @@ export function Landing() {
                 <Col key={f.title} xs={24} sm={12} lg={8}>
                   <Card className={styles.featureCard} variant={'outlined'}>
                     <div className={styles.featureIcon}>{f.icon}</div>
-                    <Title level={4} className={styles.featureTitle}>{f.title}</Title>
+                    <Title level={4} className={styles.featureTitle}>
+                      {f.title}
+                    </Title>
                     <Paragraph className={styles.featureDesc}>{f.desc}</Paragraph>
                   </Card>
                 </Col>
@@ -210,12 +232,14 @@ export function Landing() {
         </section>
 
         {/* PRICING */}
-        <Row id='pricing' gutter={[16, 16]} justify="center" className={styles.pricingRow}>
+        <Row id="pricing" gutter={[16, 16]} justify="center" className={styles.pricingRow}>
           <Col xs={24} sm={20} md={12} lg={8} xl={7}>
             <Card className={styles.pricingCard}>
               <div className={styles.pricingTop}>
                 <div>
-                  <Title level={3} className={styles.pricingTitle}>Free</Title>
+                  <Title level={3} className={styles.pricingTitle}>
+                    Free
+                  </Title>
                   <Text className={styles.pricingSub}>до ~3 учеников</Text>
                 </div>
                 <Tag color="processing" className={styles.pricingTag}>
@@ -236,9 +260,7 @@ export function Landing() {
                 </Button>
               </Link>
 
-              <Text className={styles.pricingNote}>
-                Для всех пользователей.
-              </Text>
+              <Text className={styles.pricingNote}>Для всех пользователей.</Text>
             </Card>
           </Col>
 
@@ -247,7 +269,9 @@ export function Landing() {
             <Card className={styles.pricingCardPremium}>
               <div className={styles.pricingTop}>
                 <div>
-                  <Title level={3} className={styles.pricingTitle}>Premium</Title>
+                  <Title level={3} className={styles.pricingTitle}>
+                    Premium
+                  </Title>
                   <Text className={styles.pricingSub}>500 ₽ / месяц</Text>
                 </div>
                 <Tag className={styles.premiumTag}>
@@ -268,9 +292,7 @@ export function Landing() {
                 </Button>
               </Link>
 
-              <Text className={styles.pricingNote}>
-                Можно отключить в любой момент.
-              </Text>
+              <Text className={styles.pricingNote}>Можно отключить в любой момент.</Text>
             </Card>
           </Col>
         </Row>
@@ -279,14 +301,17 @@ export function Landing() {
         <section className={styles.cta}>
           <div className={styles.container}>
             <div>
-              <Title level={2} className={styles.ctaTitle}>Готовы начать?</Title>
+              <Title level={2} className={styles.ctaTitle}>
+                Готовы начать?
+              </Title>
               <Paragraph className={styles.ctaText}>
-                Присоединяйтесь к репетиторам и ученикам, которые уже используют EduVix для достижения учебных целей.
+                Присоединяйтесь к репетиторам и ученикам, которые уже используют EduVix для
+                достижения учебных целей.
               </Paragraph>
             </div>
             <Space size={20} wrap className={styles.spaceCTA}>
               <Link href="/signup">
-                <Button intent="secondary" uiSize="sm" iconRight={<ArrowRightOutlined/>}>
+                <Button intent="secondary" uiSize="sm" iconRight={<ArrowRightOutlined />}>
                   Преподавать
                 </Button>
               </Link>

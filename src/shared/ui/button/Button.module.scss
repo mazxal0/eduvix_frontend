@@ -1,0 +1,118 @@
+.btn {
+  border-radius: var(--radius);
+  font-weight: var(--font-weight-medium);
+  box-shadow: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease,
+  opacity 0.15s ease;
+}
+
+/* sizes */
+.s_sm {
+  height: 32px;
+  padding: 0 12px;
+  font-size: 13px;
+}
+.s_md {
+  height: 40px;
+  padding: 0 16px;
+  font-size: 14px;
+}
+.s_lg {
+  height: 48px;
+  padding: 0 18px;
+  font-size: 15px;
+}
+
+/* variants */
+.v_primary {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--primary-foreground);
+}
+.v_primary:hover:not(:disabled),
+.v_primary:focus-visible:not(:disabled) {
+  opacity: 0.92;
+  color: var(--primary-foreground);
+}
+.v_primary:disabled {
+  opacity: 0.6;
+}
+
+.v_secondary {
+  background: var(--secondary);
+  border-color: var(--secondary);
+  color: var(--secondary-foreground);
+}
+.v_secondary:hover:not(:disabled),
+.v_secondary:focus-visible:not(:disabled) {
+  opacity: 0.92;
+  color: var(--secondary-foreground);
+}
+.v_secondary:disabled {
+  opacity: 0.6;
+}
+
+.v_outline {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--foreground);
+}
+.v_outline:hover:not(:disabled),
+.v_outline:focus-visible:not(:disabled) {
+  border-color: var(--ring);
+}
+
+.v_ghost {
+  background: transparent;
+  border-color: transparent;
+  color: var(--foreground);
+}
+.v_ghost:hover:not(:disabled),
+.v_ghost:focus-visible:not(:disabled) {
+  background: var(--muted);
+}
+
+.v_text {
+  background: transparent;
+  border-color: transparent;
+  color: var(--foreground);
+  padding-inline: 10px; /* чтобы текст-кнопка была компактной */
+}
+.v_text:hover:not(:disabled),
+.v_text:focus-visible:not(:disabled) {
+  color: var(--primary);
+}
+
+.v_destructive {
+  background: var(--destructive);
+  border-color: var(--destructive);
+  color: var(--destructive-foreground);
+}
+.v_destructive:hover:not(:disabled),
+.v_destructive:focus-visible:not(:disabled) {
+  opacity: 0.92;
+  color: var(--destructive-foreground);
+}
+
+/* AntD specifics: убрать жирный hover-shadow и outline */
+.btn:global(.ant-btn) {
+  box-shadow: none;
+}
+.btn:global(.ant-btn):focus-visible {
+  outline: 2px solid color-mix(in oklab, var(--ring) 50%, transparent);
+  outline-offset: 2px;
+}
+
+.content {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.label {
+  display: inline-flex;
+}
+
+.iconRight {
+
+}

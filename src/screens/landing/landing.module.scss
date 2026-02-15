@@ -1,0 +1,394 @@
+.page {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+}
+
+.brandText {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.nav {
+  display: none;
+  gap: 18px;
+
+  a {
+    color: var(--muted-foreground);
+    text-decoration: none;
+    font-size: 14px;
+
+    //&:hover { color: var(--foreground); }
+  }
+
+  @media (min-width: 768px) {
+    display: flex;
+  }
+}
+
+/* Hero */
+.hero {
+  padding: 72px 0 56px;
+  background:
+    radial-gradient(900px 380px at 20% 10%, color-mix(in oklab, var(--primary) 18%, transparent), transparent 60%),
+    radial-gradient(900px 420px at 90% 10%, color-mix(in oklab, var(--color-chart-3) 18%, transparent), transparent 60%),
+    linear-gradient(180deg, var(--background), color-mix(in oklab, var(--secondary) 35%, var(--background)));
+  border-bottom: 1px solid var(--border);
+}
+
+.hero .container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sectionHead {
+  margin-bottom: 18px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pill {
+  background: var(--secondary) !important;
+  color: var(--secondary-foreground) !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  padding: 6px 12px !important;
+}
+
+.heroTitle {
+  margin-top: 14px !important;
+  margin-bottom: 10px !important;
+  font-size: clamp(34px, 4vw, 54px) !important;
+  line-height: 1.05 !important;
+}
+
+.primary {
+  color: var(--primary);
+}
+
+.heroText {
+  margin: 0 0 18px !important;
+  color: var(--muted-foreground);
+  font-size: 18px;
+  max-width: 820px;
+}
+
+.heroActions {
+  margin-top: 8px;
+}
+
+.heroStats {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stat {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 16px;
+}
+
+.statValue {
+  display: block;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--foreground);
+}
+
+.statLabel {
+  display: block;
+  color: var(--muted-foreground);
+  font-size: 13px;
+}
+
+/* Sections */
+.section {
+  padding: 64px 0;
+}
+
+// DEL
+.sectionAlt {
+  padding: 64px 0;
+  background: var(--muted);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.sectionHead {
+  margin-bottom: 18px;
+}
+
+.sectionTitle {
+  margin: 0 0 8px !important;
+}
+
+.sectionDesc {
+  margin: 0 !important;
+  color: var(--muted-foreground);
+  max-width: 720px;
+}
+
+/* Cards */
+.featureCard {
+  border-radius: 14px !important;
+  border: 1px solid var(--border) !important;
+  background: var(--card) !important;
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    border-color: color-mix(in oklab, var(--primary) 40%, var(--border)) !important;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  }
+}
+
+.featureIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: var(--accent);
+  color: var(--accent-foreground);
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.featureTitle {
+  margin: 0 0 6px !important;
+}
+
+.featureDesc {
+  margin: 0 !important;
+  color: var(--muted-foreground);
+}
+
+/* Steps + Pricing */
+.pricingRow {
+  margin-top: 28px;
+  margin-bottom: 12px; /* чтобы после Row был воздух */
+}
+
+.pricingCard {
+  width: 100%;
+  max-width: 420px; /* подстрой: 380-460 */
+  margin: 0 auto;   /* центрируем внутри колонки */
+}
+
+
+
+.stepTagSecondary {
+  background: var(--secondary) !important;
+  color: var(--secondary-foreground) !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+}
+
+
+.pricingTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.pricingTitle {
+  margin: 0 !important;
+}
+
+.pricingSub {
+  display: block;
+  color: var(--muted-foreground);
+}
+
+.pricingTag {
+  border-radius: 999px !important;
+}
+
+.pricingList {
+  margin: 0 0 16px;
+  padding-left: 18px;
+  color: var(--muted-foreground);
+
+  li { margin: 8px 0; }
+}
+
+/* CTA */
+.cta {
+  padding: 56px 0;
+  background:
+    linear-gradient(120deg,
+      color-mix(in oklab, var(--primary) 92%, #000),
+      color-mix(in oklab, var(--primary) 72%, #000)
+    );
+  color: var(--primary-foreground);
+  margin-top: 50px;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.ctaInner {
+  border-radius: 18px;
+  padding: 28px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: color-mix(in oklab, #000 10%, transparent);
+  border: 1px solid color-mix(in oklab, #fff 18%, transparent);
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.ctaTitle {
+  color: var(--primary-foreground) !important;
+  margin: 0 0 8px !important;
+  font-size: clamp(34px, 7vw, 54px) ;
+}
+
+.ctaText {
+  color: var(--primary-foreground);
+  margin: 0 !important;
+  opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+  background: var(--background);
+  border-top: 1px solid var(--border);
+}
+
+.howGrid {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.howTitle {
+  margin: 0 0 18px !important;
+  color: var(--primary);
+  text-align: left;
+}
+
+.stepsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.stepItem {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+.stepNumber {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  font-weight: 600;
+  font-size: 14px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.stepItem b {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--foreground);
+  font-weight: 600;
+}
+
+.stepItem p {
+  margin: 0;
+  color: var(--muted-foreground);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.pricingCardPremium {
+  @extend .pricingCard;
+
+  border-color: color-mix(in oklab, var(--primary) 40%, var(--border)) !important;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.10);
+  position: relative;
+
+  /* легкий фон, чтобы выделить тариф */
+  background: linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--secondary) 35%, var(--card)),
+      var(--card)
+  ) !important;
+}
+
+.premiumTag {
+  background: var(--primary) !important;
+  color: var(--primary-foreground) !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+}
+
+.pricingNote {
+  display: block;
+  margin-top: 10px;
+  color: var(--muted-foreground);
+  font-size: 12px;
+}
+
+.spaceCTA {
+  margin-top: 30px;
+}

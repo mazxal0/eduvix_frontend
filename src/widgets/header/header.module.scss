@@ -1,0 +1,29 @@
+/* Навигация в Header */
+.eduvix_header {
+
+
+  .ant-menu-item a,
+  .ant-menu-item span {
+    color: var(--muted-foreground);
+    transition: color 0.2s ease;
+  }
+
+  .ant-menu-item:hover a,
+  .ant-menu-item:hover span {
+    color: var(--foreground);
+  }
+
+  /* Убираем синий underline Antd */
+  .ant-menu-horizontal > .ant-menu-item::after {
+    border-bottom: none;
+  }
+}
+
+.link_header {
+  color: var(--muted-foreground) !important;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--foreground) !important;
+  }
+}

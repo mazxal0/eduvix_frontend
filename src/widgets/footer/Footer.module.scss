@@ -1,0 +1,130 @@
+.footer {
+  background: var(--background);
+  border-top: 1px solid var(--border);
+  padding: 48px 0 24px;
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  @media (max-width: 560px) {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+/* Brand block */
+.footerBrandTop {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footerLogo {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+}
+
+.footerName {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--foreground);
+}
+
+.footerDesc {
+  margin: 10px 0 0;
+  max-width: 320px; /* как на референсе */
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--muted-foreground);
+}
+
+/* Columns */
+.footerColTitle {
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--foreground);
+  margin-bottom: 12px;
+}
+
+.footerLink {
+  display: block;
+  font-size: 13px;
+  color: var(--muted-foreground);
+  text-decoration: none;
+  margin: 8px 0;
+
+  &:hover {
+    color: var(--foreground);
+  }
+}
+
+/* Divider + bottom */
+.footerDivider {
+  margin: 28px 0 18px;
+  height: 1px;
+  background: var(--border);
+}
+
+.footerBottom {
+  display: flex;
+  justify-content: center;
+}
+
+.footerCopy {
+  font-size: 12px;
+  color: var(--muted-foreground);
+}
+
+.footer .container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.footerBrand {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footerCol {
+  display: flex;
+  flex-direction: column;
+  min-width: 140px;
+}
+
+.footerLink {
+  transition: color 0.15s ease;
+}
+
+.footerBottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 24px;
+}
+
+@media (max-width: 560px) {
+  .footerBrand {
+    align-items: flex-start;
+  }
+
+  .footerDesc {
+    max-width: 100%;
+  }
+}
